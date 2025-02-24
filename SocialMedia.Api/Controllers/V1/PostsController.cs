@@ -1,9 +1,11 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using SocialMedia.Domain.Models;
 
-namespace SocialMedia.Api.Controllers;
+namespace SocialMedia.Api.Controllers.V1;
 
-[Route("[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 [ApiController]
 public class PostsController: ControllerBase
 {
