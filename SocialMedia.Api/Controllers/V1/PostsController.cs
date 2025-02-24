@@ -1,6 +1,5 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using SocialMedia.Domain.Models;
 
 namespace SocialMedia.Api.Controllers.V1;
 
@@ -11,9 +10,8 @@ public class PostsController: ControllerBase
 {
     [HttpGet]
     [Route("{id}")]
-    public IActionResult GetById(int id)
+    public IActionResult GetById(int id, CancellationToken cancellationToken)
     {
-        var post = new Post{Id = id, Text = "Hello, world" };
-        return Ok(post);
+        return Ok();
     }
 }
